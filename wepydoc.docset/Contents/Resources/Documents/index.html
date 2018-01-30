@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)#/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>wepyjs - 小程序组件化开发框架</title>
+    <link rel="icon" href="https://tencent.github.io/wepy/favicon.ico">
+    <meta name="description" content="小程序组件化开发框架">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./files/vue.css">
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body data-page="doc.md" class="ready sticky">
+    <nav class="a123 app-nav no-badge">
+                <a href="https://tencent.github.io/wepy/index.html">首页</a>
+                <a href="#api">API文档</a>
+                <a href="#changelog">CHANGELOG</a>
+            </nav><div style="position: absolute;z-index: 999;padding: 5px 0 0 350px;">如发现文档中的错误，请<a href="https://github.com/wepyjs/wepy/edit/master/docs/md/doc.md" target="_blank">点击这里</a>修改本文档，修改完成后请 pull request，我们会尽快合并、更新。</div>
+    <header>
+        <div class="container">
+            
+        </div>
+    </header>
+    <main><button class="sidebar-toggle"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><div class="sidebar-nav"><ul><li><a class="section-link" href="#/?id=%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%bb%84%e4%bb%b6%e5%8c%96%e5%bc%80%e5%8f%91%e6%a1%86%e6%9e%b6wepy%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3">微信小程序组件化开发框架WePY官方文档</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97">快速入门指南</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=wepy%e9%a1%b9%e7%9b%ae%e7%9a%84%e5%88%9b%e5%bb%ba%e4%b8%8e%e4%bd%bf%e7%94%a8">WePY项目的创建与使用</a></li><li><a class="section-link" href="#/?id=wepy%e9%a1%b9%e7%9b%ae%e7%9a%84%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">WePY项目的目录结构</a></li><li><a class="section-link" href="#/?id=%e5%8f%82%e8%80%83%e5%bb%ba%e8%ae%ae">参考建议</a></li><li><a class="section-link" href="#/?id=%e9%87%8d%e8%a6%81%e6%8f%90%e9%86%92">重要提醒</a></li><li><a class="section-link" href="#/?id=%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae">代码高亮</a></li><li><a class="section-link" href="#/?id=%e4%bb%a3%e7%a0%81%e8%a7%84%e8%8c%83">代码规范</a></li></ul></li><li><a class="section-link" href="#/?id=%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7">主要功能特性</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e5%bc%80%e5%8f%91%e6%a8%a1%e5%bc%8f%e8%bd%ac%e6%8d%a2">开发模式转换</a></li><li><a class="section-link" href="#/?id=%e6%94%af%e6%8c%81%e7%bb%84%e4%bb%b6%e5%8c%96%e5%bc%80%e5%8f%91">支持组件化开发</a></li><li><a class="section-link" href="#/?id=%e6%94%af%e6%8c%81%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8npm%e5%8c%85">支持加载外部NPM包</a></li><li><a class="section-link" href="#/?id=%e5%8d%95%e6%96%87%e4%bb%b6%e6%a8%a1%e5%bc%8f%ef%bc%8c%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e6%9b%b4%e6%b8%85%e6%99%b0%ef%bc%8c%e5%bc%80%e5%8f%91%e6%9b%b4%e6%96%b9%e4%be%bf">单文件模式，目录结构更清晰，开发更方便</a></li><li><a class="section-link" href="#/?id=%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8babel%e7%bc%96%e8%af%91%ef%bc%8c%e6%94%af%e6%8c%81es67%e7%9a%84%e4%b8%80%e4%ba%9b%e6%96%b0%e7%89%b9%e6%80%a7">默认使用babel编译，支持ES6/7的一些新特性</a></li><li><a class="section-link" href="#/?id=%e9%92%88%e5%af%b9%e5%8e%9f%e7%94%9fapi%e8%bf%9b%e8%a1%8c%e4%bc%98%e5%8c%96">针对原生API进行优化</a></li></ul></li><li><a class="section-link" href="#/?id=%e8%bf%9b%e9%98%b6%e4%bb%8b%e7%bb%8d">进阶介绍</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=wepyconfigjs%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%af%b4%e6%98%8e">wepy.config.js配置文件说明</a></li><li><a class="section-link" href="#/?id=%e5%85%b3%e4%ba%8ecompilers%e5%92%8cplugins">关于compilers和plugins</a></li><li><a class="section-link" href="#/?id=wpy%e6%96%87%e4%bb%b6%e8%af%b4%e6%98%8e">.wpy文件说明</a></li><li><a class="section-link" href="#/?id=%e8%84%9a%e6%9c%ac%e9%83%a8%e5%88%86%e4%bb%8b%e7%bb%8d">脚本部分介绍</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%85%a5%e5%8f%a3appwpy">小程序入口app.wpy</a></li><li><a class="section-link" href="#/?id=%e9%a1%b5%e9%9d%a2pagewpy">页面page.wpy</a></li><li><a class="section-link" href="#/?id=%e7%bb%84%e4%bb%b6comwpy">组件com.wpy</a></li></ul></li><li><a class="section-link" href="#/?id=%e5%ae%9e%e4%be%8b">实例</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=app%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%ae%9e%e4%be%8b">App小程序实例</a></li><li><a class="section-link" href="#/?id=page%e9%a1%b5%e9%9d%a2%e5%ae%9e%e4%be%8b%e5%92%8ccomponent%e7%bb%84%e4%bb%b6%e5%ae%9e%e4%be%8b">Page页面实例和Component组件实例</a></li></ul></li><li><a class="section-link" href="#/?id=%e7%bb%84%e4%bb%b6">组件</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e6%99%ae%e9%80%9a%e7%bb%84%e4%bb%b6%e5%bc%95%e7%94%a8">普通组件引用</a></li><li><a class="section-link" href="#/?id=%e7%bb%84%e4%bb%b6%e7%9a%84%e5%be%aa%e7%8e%af%e6%b8%b2%e6%9f%93">组件的循环渲染</a></li><li><a class="section-link" href="#/?id=computed-%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7">computed 计算属性</a></li><li><a class="section-link" href="#/?id=watcher-%e7%9b%91%e5%90%ac%e5%99%a8">watcher 监听器</a></li><li><a class="section-link" href="#/?id=props-%e4%bc%a0%e5%80%bc">props 传值</a></li><li><a class="section-link" href="#/?id=%e7%bb%84%e4%bb%b6%e9%80%9a%e4%bf%a1%e4%b8%8e%e4%ba%a4%e4%ba%92">组件通信与交互</a></li><li><a class="section-link" href="#/?id=%e7%bb%84%e4%bb%b6%e8%87%aa%e5%ae%9a%e4%b9%89%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0">组件自定义事件处理函数</a></li><li><a class="section-link" href="#/?id=slot-%e7%bb%84%e4%bb%b6%e5%86%85%e5%ae%b9%e5%88%86%e5%8f%91%e6%8f%92%e6%a7%bd">slot 组件内容分发插槽</a></li></ul></li><li><a class="section-link" href="#/?id=%e7%ac%ac%e4%b8%89%e6%96%b9%e7%bb%84%e4%bb%b6">第三方组件</a></li><li><a class="section-link" href="#/?id=mixin-%e6%b7%b7%e5%90%88">Mixin 混合</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e9%bb%98%e8%ae%a4%e5%bc%8f%e6%b7%b7%e5%90%88">默认式混合</a></li><li><a class="section-link" href="#/?id=%e5%85%bc%e5%ae%b9%e5%bc%8f%e6%b7%b7%e5%90%88">兼容式混合</a></li></ul></li><li><a class="section-link" href="#/?id=wxs-weixin-script">WXS (WeiXin Script)</a></li><li><a class="section-link" href="#/?id=interceptor-%e6%8b%a6%e6%88%aa%e5%99%a8">interceptor 拦截器</a></li><li><a class="section-link" href="#/?id=%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a">数据绑定</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=%e5%8e%9f%e7%94%9f%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f">原生小程序的数据绑定方式</a></li><li><a class="section-link" href="#/?id=wepy%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f">WePY数据绑定方式</a></li><li><a class="section-link" href="#/?id=wepy%e8%84%8f%e6%95%b0%e6%8d%ae%e6%a3%80%e6%9f%a5%e6%b5%81%e7%a8%8b">WePY脏数据检查流程</a></li></ul></li><li><a class="section-link" href="#/?id=%e5%85%b6%e5%ae%83%e4%bc%98%e5%8c%96%e7%bb%86%e8%8a%82">其它优化细节</a></li><li><ul class="children"><li><a class="section-link" href="#/?id=_1-wxrequest-%e6%8e%a5%e6%94%b6%e5%8f%82%e6%95%b0%e4%bf%ae%e6%94%b9">1. wx.request 接收参数修改</a></li><li><a class="section-link" href="#/?id=_2-%e4%bc%98%e5%8c%96%e4%ba%8b%e4%bb%b6%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92">2. 优化事件参数传递</a></li><li><a class="section-link" href="#/?id=_3-%e6%94%b9%e5%8f%98%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f">3. 改变数据绑定方式</a></li><li><a class="section-link" href="#/?id=_4-%e7%bb%84%e4%bb%b6%e4%bb%a3%e6%9b%bf%e6%a8%a1%e6%9d%bf%e5%92%8c%e6%a8%a1%e5%9d%97">4. 组件代替模板和模块</a></li></ul></li></ul></li></ul></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><h1 id="微信小程序组件化开发框架wepy官方文档"><a href="#/?id=%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%bb%84%e4%bb%b6%e5%8c%96%e5%bc%80%e5%8f%91%e6%a1%86%e6%9e%b6wepy%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3" data-id="微信小程序组件化开发框架wepy官方文档" class="anchor"><span>微信小程序组件化开发框架WePY官方文档</span></a></h1><h2 id="快速入门指南"><a href="#/?id=%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97" data-id="快速入门指南" class="anchor"><span>快速入门指南</span></a></h2><h3 id="wepy项目的创建与使用"><a href="#/?id=wepy%e9%a1%b9%e7%9b%ae%e7%9a%84%e5%88%9b%e5%bb%ba%e4%b8%8e%e4%bd%bf%e7%94%a8" data-id="wepy项目的创建与使用" class="anchor"><span>WePY项目的创建与使用</span></a></h3><p>WePY的安装或更新都通过<code>npm</code>进行。</p><p><strong>全局安装或更新WePY命令行工具</strong></p><pre v-pre="" data-lang="bash"><code class="lang-bash">npm install wepy-cli -g</code></pre><p><strong>在开发目录中生成Demo开发项目</strong></p><pre v-pre="" data-lang="bash"><code class="lang-bash">wepy new myproject</code></pre><p><strong>切换至项目目录</strong></p><pre v-pre="" data-lang="bash"><code class="lang-bash">cd myproject</code></pre><p><strong>开启实时编译</strong></p><pre v-pre="" data-lang="bash"><code class="lang-bash">wepy build --watch</code></pre><h3 id="wepy项目的目录结构"><a href="#/?id=wepy%e9%a1%b9%e7%9b%ae%e7%9a%84%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84" data-id="wepy项目的目录结构" class="anchor"><span>WePY项目的目录结构</span></a></h3><pre v-pre="" data-lang=""><code class="lang-">├── dist                   微信开发者工具指定的目录（该目录由WePY的build指令自动编译生成，请不要直接修改该目录下的文件）
+├── node_modules           
+├── src                    代码编写的目录（该目录为使用WePY后的开发目录）
+|   ├── components         WePY组件目录（组件不属于完整页面，仅供完整页面或其他组件引用）
+|   |   ├── com_a.wpy      可复用的WePY组件a
+|   |   └── com_b.wpy      可复用的WePY组件b
+|   ├── pages              WePY页面目录（属于完整页面）
+|   |   ├── index.wpy      index页面（经build后，会在dist目录下的pages目录生成index.js、index.json、index.wxml和index.wxss文件）
+|   |   └── other.wpy      other页面（经build后，会在dist目录下的pages目录生成other.js、other.json、other.wxml和other.wxss文件）
+|   └── app.wpy            小程序配置项（全局数据、样式、声明钩子等；经build后，会在dist目录下生成app.js、app.json和app.wxss文件）
+└── package.json           项目的package配置</code></pre><h3 id="参考建议"><a href="#/?id=%e5%8f%82%e8%80%83%e5%bb%ba%e8%ae%ae" data-id="参考建议" class="anchor"><span>参考建议</span></a></h3><ol>
+<li><p>WePY借鉴了Vue.js（后文简称Vue）的语法风格和功能特性，如果你之前从未接触过Vue，建议先阅读Vue的<a href="https://cn.vuejs.org/v2/guide/" target="_blank">官方文档</a>，以熟悉相关概念，否则在阅读WePY文档以及使用WePY进行开发的过程中，将会遇到比较多的障碍。</p></li>
+<li><p>开发建议使用第三方成熟IDE或编辑器(具体请参看后文的<code>代码高亮</code>部分)，<code>微信开发者工具</code>仅用于实时预览和调试。</p></li>
+</ol>
+<h3 id="重要提醒"><a href="#/?id=%e9%87%8d%e8%a6%81%e6%8f%90%e9%86%92" data-id="重要提醒" class="anchor"><span>重要提醒</span></a></h3><ol>
+<li><p>使用<code>微信开发者工具</code>--&gt;<code>添加项目</code>，<code>项目目录</code>请选择<code>dist</code>目录。</p></li>
+<li><p><code>微信开发者工具</code>--&gt;<code>项目</code>--&gt;<code>关闭ES6转ES5</code>。 <font style="color:red">重要：漏掉此项会运行报错。</font></p></li>
+<li><p><code>微信开发者工具</code>--&gt;<code>项目</code>--&gt;<code>关闭上传代码时样式自动补全</code>。 <font style="color:red">重要：某些情况下漏掉此项也会运行报错。</font></p></li>
+<li><p><code>微信开发者工具</code>--&gt;<code>项目</code>--&gt;<code>关闭代码压缩上传</code>。 <font style="color:red">重要：开启后，会导致真机computed, props.sync 等等属性失效。</font>（注：压缩功能可使用WePY提供的build指令代替，详见后文相关介绍以及Demo项目根目录中的<code>wepy.config.js</code>和<code>package.json</code>文件。）</p></li>
+<li><p>本地项目根目录运行<code>wepy build --watch</code>，开启实时编译。（注：如果同时在<code>微信开发者工具</code>--&gt;<code>设置</code>--&gt;<code>编辑器</code>中勾选了<code>文件保存时自动编译小程序</code>，将可以实时预览，非常方便。）</p></li>
+</ol>
+<h3 id="代码高亮"><a href="#/?id=%e4%bb%a3%e7%a0%81%e9%ab%98%e4%ba%ae" data-id="代码高亮" class="anchor"><span>代码高亮</span></a></h3><p>文件后缀为<code>.wpy</code>，可共用<code>Vue</code>的高亮规则，但需要手动设置。下面提供一些常见IDE或编辑器中实现代码高亮的相关设置步骤以供参考(也可通过更改文件后缀名的方式来实现高亮，详见后文相关介绍)。</p><ul>
+<li><strong>Sublime</strong></li>
+</ul>
+<p>  1. 打开<code>Sublime-&gt;Preferences-&gt;Browse Packages..</code>进入用户包文件夹。</p><p>  2. 在此文件夹下打开cmd，运行<code>git clone git@github.com:vuejs/vue-syntax-highlight.git</code>，无GIT用户可以直接下载<a href="https://github.com/vuejs/vue-syntax-highlight/archive/master.zip" target="_blank">zip包</a>解压至当前文件夹。</p><p>  3. 关闭<code>.wpy</code>文件重新打开即可高亮。</p><ul>
+<li><strong>WebStorm/PhpStorm</strong></li>
+</ul>
+<p>  1. 打开<code>Settings</code>，搜索<code>Plugins</code>，搜索<code>Vue.js</code>插件并安装。</p><p>  2. 打开<code>Settings</code>，搜索<code>File Types</code>，找到<code>Vue.js Template</code>，在<code>Registered Patterns</code>添加<code>*.wpy</code>，即可高亮。</p><ul>
+<li><strong>Atom</strong></li>
+</ul>
+<p>  1. 在Atom里先安装Vue的语法高亮 - <code>language-vue</code>，如果装过了就忽略这一步。</p><p>  2. 打开<code>Atom -&gt; Config</code>菜单。在<code>core</code>键下添加：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript">customFileTypes<span class="token punctuation">:</span>
+   <span class="token string">"text.html.vue"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"wpy"</span>
+   <span class="token punctuation">]</span></code></pre><ul>
+<li><strong>VS Code</strong></li>
+</ul>
+<p>  1. 在 Code 里先安装 Vue 的语法高亮插件 <code>Vetur</code>。</p><p>  2. 打开任意 <code>.wpy</code> 文件。</p><p>  3. 点击右下角的选择语言模式，默认为<code>纯文本</code>。</p><p>  4. 在弹出的窗口中选择 <code>.wpy 的配置文件关联...</code>。</p><p>  5. 在<code>选择要与 .wpy 关联的语言模式</code> 中选择 <code>Vue</code>。</p><ul>
+<li><strong>VIM</strong></li>
+</ul>
+<p>  1. 安装 <code>Vue</code> 的 VIM 高亮插件，例如 <a href="https://github.com/posva/vim-vue" target="_blank">posva/vim-vue</a>。</p><p>  2. 配置 <code>.wpy</code> 后缀名的文件使用 <code>Vue</code> 语法高亮。</p><pre v-pre="" data-lang="vim"><code class="lang-vim"> au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css</code></pre><h3 id="代码规范"><a href="#/?id=%e4%bb%a3%e7%a0%81%e8%a7%84%e8%8c%83" data-id="代码规范" class="anchor"><span>代码规范</span></a></h3><ol>
+<li><p>变量与方法尽量使用驼峰式命名，并且注意避免使用<code>$</code>开头。
+以<code>$</code>开头的标识符为WePY框架的内建属性和方法，可在JavaScript脚本中以<code>this.</code>的方式直接使用，具体请<a href="#/?id=api">参考API文档</a>。</p></li>
+<li><p>小程序入口、页面、组件文件名的后缀为<code>.wpy</code>；外链的文件可以是其它后缀。
+具体请参考<a href="#/?id=wpy%e6%96%87%e4%bb%b6%e8%af%b4%e6%98%8e">wpy文件说明</a>。</p></li>
+<li><p>使用ES6语法开发。
+框架在ES6(ECMAScript 6)下开发，因此也需要使用ES6开发小程序，ES6中有大量的语法糖可以让我们的代码更加简洁高效。</p></li>
+<li><p>使用Promise。
+框架默认对小程序提供的API全都进行了 Promise 处理，甚至可以直接使用<code>async/await</code>等新特性进行开发。</p></li>
+<li><p>事件绑定语法使用优化语法代替。
+原<code>bindtap="click"</code>替换为<code>@tap="click"</code>，原<code>catchtap="click"</code>替换为<code>@tap.stop="click"</code>。更多<code>@</code>符用法，参见<a href="https://github.com/wepyjs/wepy#%E7%BB%84%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" target="_blank">组件自定义事件</a>。</p></li>
+<li><p>事件传参使用优化后语法代替。
+原<code>bindtap="click" data-index={{index}}</code>替换为<code>@tap="click({{index}})"</code>。</p></li>
+<li><p>自定义组件命名应避开微信原生组件名称以及功能标签<code>&lt;repeat&gt;</code>。
+不可以使用<code>input、button、view、repeat</code>等微信小程序原生组件名称命名自定义组件；另外也不要使用WePY框架定义的辅助标签<code>repeat</code>命名。有关<code>repeat</code>的详细信息，请参见<a href="https://github.com/wepyjs/wepy#%E5%BE%AA%E7%8E%AF%E5%88%97%E8%A1%A8%E7%BB%84%E4%BB%B6%E5%BC%95%E7%94%A8" target="_blank">循环列表组件引用</a>。</p></li>
+</ol>
+<h2 id="主要功能特性"><a href="#/?id=%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7" data-id="主要功能特性" class="anchor"><span>主要功能特性</span></a></h2><h3 id="开发模式转换"><a href="#/?id=%e5%bc%80%e5%8f%91%e6%a8%a1%e5%bc%8f%e8%bd%ac%e6%8d%a2" data-id="开发模式转换" class="anchor"><span>开发模式转换</span></a></h3><p>WePY框架在开发过程中参考了Vue等现有框架的一些语法风格和功能特性，对原生小程序的开发模式进行了再次封装，更贴近于MVVM架构模式。以下是使用WePY前后的代码对比。</p><p>原生代码：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token comment" spellcheck="true">//index.js</span>
+
+<span class="token comment" spellcheck="true">//获取应用实例</span>
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//通过Page构造函数创建页面逻辑</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//可用于页面模板绑定的数据</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        motto<span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span>
+        userInfo<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment" spellcheck="true">//事件处理函数</span>
+    bindViewTap<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'button clicked'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment" spellcheck="true">//页面的生命周期函数</span>
+    onLoad<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onLoad'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p>基于WePY的代码：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token comment" spellcheck="true">//index.wpy中的&lt;script&gt;部分</span>
+
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//通过继承自wepy.page的类创建页面逻辑</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//可用于页面模板绑定的数据</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        motto<span class="token punctuation">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span>
+        userInfo<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//事件处理函数(集中保存在methods对象中)</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span>
+        bindViewTap <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'button clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//页面的生命周期函数</span>
+    <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'onLoad'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><h3 id="支持组件化开发"><a href="#/?id=%e6%94%af%e6%8c%81%e7%bb%84%e4%bb%b6%e5%8c%96%e5%bc%80%e5%8f%91" data-id="支持组件化开发" class="anchor"><span>支持组件化开发</span></a></h3><p>参见章节：<a href="#/?id=%e7%bb%84%e4%bb%b6">组件</a></p><p>示例代码：</p><pre v-pre="" data-lang="html"><code class="lang-html">// index.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>panel</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>panel</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter1</span> <span class="token attr-name">:num</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myNum<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter1</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter2</span> <span class="token attr-name">:num.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>syncNum<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>list</span> <span class="token attr-name">:item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>items<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>list</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//引入List、Panel和Counter组件</span>
+<span class="token keyword">import</span> List <span class="token keyword">from</span> <span class="token string">'../components/list'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Panel <span class="token keyword">from</span> <span class="token string">'../components/panel'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Counter <span class="token keyword">from</span> <span class="token string">'../components/counter'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//页面配置</span>
+    config <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"navigationBarTitleText"</span><span class="token punctuation">:</span> <span class="token string">"test"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//声明页面中将要使用到的组件</span>
+    components <span class="token operator">=</span> <span class="token punctuation">{</span>
+        panel<span class="token punctuation">:</span> Panel<span class="token punctuation">,</span>
+        counter1<span class="token punctuation">:</span> Counter<span class="token punctuation">,</span>
+        counter2<span class="token punctuation">:</span> Counter<span class="token punctuation">,</span>
+        list<span class="token punctuation">:</span> List
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//可用于页面模板中绑定的数据</span>
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        myNum<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+        syncNum<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><h3 id="支持加载外部npm包"><a href="#/?id=%e6%94%af%e6%8c%81%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8npm%e5%8c%85" data-id="支持加载外部npm包" class="anchor"><span>支持加载外部NPM包</span></a></h3><p>在编译过程当中，会递归遍历代码中的<code>require</code>然后将对应依赖文件从node_modules当中拷贝出来，并且修改<code>require</code>为相对路径，从而实现对外部NPM包的支持。如下图：</p><p align="center">
+  <img src="./files/482b0f64-b198-11e6-8d4e-70c92326004f.png">
+</p>
+
+<h3 id="单文件模式，目录结构更清晰，开发更方便"><a href="#/?id=%e5%8d%95%e6%96%87%e4%bb%b6%e6%a8%a1%e5%bc%8f%ef%bc%8c%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84%e6%9b%b4%e6%b8%85%e6%99%b0%ef%bc%8c%e5%bc%80%e5%8f%91%e6%9b%b4%e6%96%b9%e4%be%bf" data-id="单文件模式，目录结构更清晰，开发更方便" class="anchor"><span>单文件模式，目录结构更清晰，开发更方便</span></a></h3><p>原生小程序要求app实例必须有3个文件：<code>app.js</code>、<code>app.json</code>、<code>app.wxss</code>，而page页面则一般有4个文件：<code>page.js</code>、<code>page.json</code>、<code>page.wxml</code>、<code>page.wxss</code>，并且还要求app实例的3个文件以及page页面的4个文件除后缀名外必须同名，具体可参看<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/structure.html?t=20161107" target="_blank">官方目录结构</a>。</p><p>而在WePY中则使用了单文件模式，将原生小程序app实例的3个文件统一为<code>app.wpy</code>，page页面的4个文件统一为<code>page.wpy</code>。使用WePY开发前后的开发目录结构对比如下：</p><p>原生小程序的目录结构：</p><pre v-pre="" data-lang=""><code class="lang-">project
+├── pages
+|   ├── index
+|   |   ├── index.js    index 页面逻辑
+|   |   ├── index.json  index 页面配置
+|   |   ├── index.wxml  index 页面结构
+|   |   └── index.wxss  index 页面样式
+|   └── log
+|       ├── log.js      log 页面逻辑
+|       ├── log.json    log 页面配置
+|       ├── log.wxml    log 页面结构
+|       └── log.wxss    log 页面样式
+├── app.js              小程序逻辑
+├── app.json            小程序公共配置
+└── app.wxss            小程序公共样式</code></pre><p>使用WePY框架后的开发目录结构(主要为src目录的结构，dist目录除外)：</p><pre v-pre="" data-lang=""><code class="lang-">    注：dist目录为WePY通过build指令生成的目录，除额外增加的npm目录外，其目录结构与原生小程序的目录结构类似。</code></pre><pre v-pre="" data-lang=""><code class="lang-">project
+└── src
+    ├── pages
+    |   ├── index.wpy    index 页面逻辑、配置、结构、样式
+    |   └── log.wpy      log 页面逻辑、配置、结构、样式
+    └──app.wpy           小程序逻辑、公共配置、公共样式</code></pre><h3 id="默认使用babel编译，支持es67的一些新特性"><a href="#/?id=%e9%bb%98%e8%ae%a4%e4%bd%bf%e7%94%a8babel%e7%bc%96%e8%af%91%ef%bc%8c%e6%94%af%e6%8c%81es67%e7%9a%84%e4%b8%80%e4%ba%9b%e6%96%b0%e7%89%b9%e6%80%a7" data-id="默认使用babel编译，支持es67的一些新特性" class="anchor"><span>默认使用babel编译，支持ES6/7的一些新特性</span></a></h3><p>用户可以通过修改<code>wepy.config.js</code>(老版本使用<code>.wepyrc</code>)配置文件，配置自己熟悉的babel环境进行开发。默认开启使用了一些新的特性如<code>promise</code>、<code>async/await</code>（自WePY 1.4.1开始必须手动开启，原因参见前文<code>代码规范</code>一节中的介绍）等等。</p><p>示例代码：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+    <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+                <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token punctuation">:</span> <span class="token number">123</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">async</span> <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><h3 id="针对原生api进行优化"><a href="#/?id=%e9%92%88%e5%af%b9%e5%8e%9f%e7%94%9fapi%e8%bf%9b%e8%a1%8c%e4%bc%98%e5%8c%96" data-id="针对原生api进行优化" class="anchor"><span>针对原生API进行优化</span></a></h3><p>对小程序原生API进行promise处理，同时修复了一些原生API的缺陷，比如：wx.request的并发问题等。</p><p>原生代码：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript">onLoad <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    wx<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        success<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            wx<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                success<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>userinfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    self<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>userInfo<span class="token punctuation">:</span> userinfo<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p>基于WePY的代码：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> wepy<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>userInfo <span class="token operator">=</span> <span class="token keyword">await</span> wepy<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p>在同时并发10个request请求测试时：</p><p>不使用WePY:</p><p align="center">
+  <img src="./files/5185f740-b198-11e6-88f8-45e359090dc3.png" alt="2 small">
+  <img src="./files/c30e802a-b199-11e6-927d-08cd4e5ed0b0.png" alt="2 small">
+</p>
+
+<p>使用WePY后：</p><p align="center">
+  <img src="./files/65704c2e-b198-11e6-8277-abb77e0c7b3e.png">
+</p>
+
+<h2 id="进阶介绍"><a href="#/?id=%e8%bf%9b%e9%98%b6%e4%bb%8b%e7%bb%8d" data-id="进阶介绍" class="anchor"><span>进阶介绍</span></a></h2><h3 id="wepyconfigjs配置文件说明"><a href="#/?id=wepyconfigjs%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%af%b4%e6%98%8e" data-id="wepyconfigjs配置文件说明" class="anchor"><span>wepy.config.js配置文件说明</span></a></h3><p>执行<code>wepy new demo</code>后，会生成类似下面这样的配置文件。</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript">
+<span class="token keyword">let</span> prod <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">'production'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'output'</span><span class="token punctuation">:</span> <span class="token string">'dist'</span><span class="token punctuation">,</span>
+    <span class="token string">'source'</span><span class="token punctuation">:</span> <span class="token string">'src'</span><span class="token punctuation">,</span>
+    <span class="token string">'wpyExt'</span><span class="token punctuation">:</span> <span class="token string">'.wpy'</span><span class="token punctuation">,</span>
+    <span class="token string">'compilers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        less<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'compress'</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">/*sass: {
+            'outputStyle': 'compressed'
+        },*/</span>
+        babel<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'presets'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token string">'es2015'</span><span class="token punctuation">,</span>
+                <span class="token string">'stage-1'</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">'plugins'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token string">'transform-export-extensions'</span><span class="token punctuation">,</span>
+                <span class="token string">'syntax-export-extensions'</span><span class="token punctuation">,</span>
+                <span class="token string">'transform-runtime'</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">'plugins'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>prod<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 压缩sass</span>
+    module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>compilers<span class="token punctuation">[</span><span class="token string">'sass'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'outputStyle'</span><span class="token punctuation">:</span> <span class="token string">'compressed'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 压缩less</span>
+    module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>compilers<span class="token punctuation">[</span><span class="token string">'less'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'compress'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 压缩js</span>
+    module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>plugins <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'uglifyjs'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            filter<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+            config<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token string">'imagemin'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            filter<span class="token punctuation">:</span> <span class="token regex">/\.(jpg|png|jpeg)$/</span><span class="token punctuation">,</span>
+            config<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                <span class="token string">'jpg'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    quality<span class="token punctuation">:</span> <span class="token number">80</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token string">'png'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    quality<span class="token punctuation">:</span> <span class="token number">80</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><p><strong>wpyExt：</strong> 缺省值为'.wpy'，IDE默认情况下不会对此文件类型进行高亮处理，这种情况下，除了按照前文<code>代码高亮</code>部分的介绍进行设置之外，还可以直接将相关文件的后缀名由<code>.wpy</code>修改为<code>.vue</code>(因为与Vue的高亮规则一样)，然后将此选项修改为<code>.vue</code>，也能解决部分IDE中代码高亮的问题。</p><p><strong>compilers：</strong> compilers为<code>1.3.1</code>版本之后的功能，如果需要使用其它语法，请先配置<code>compilers</code>，然后再安装相应的compilers。目前支持<code>wepy-compiler-less</code>，<code>wepy-compiler-sass</code>、<code>wepy-compiler-babel</code>、<code>wepy-compiler-pug</code>，其他compiler持续开发中......</p><p>对应各compiler请参考各自文档：</p><blockquote>
+<p><strong>sass：</strong> sass编译配置，参见<a href="https://github.com/sass/node-sass" target="_blank">这里</a>。</p><p><strong>less：</strong> less编译配置，参见<a href="http://lesscss.org/#using-less-usage-in-code" target="_blank">这里</a>。</p><p><strong>stylus：</strong> stylus编译配置，参见<a href="http://www.zhangxinxu.com/jq/stylus/js.php" target="_blank">这里</a>。</p><p><strong>babel：</strong> babel编译配置，参见<a href="http://babeljs.io/docs/usage/options/" target="_blank">这里</a>。</p><p><strong>typescript：</strong> typescript编译配置，参见<a href="https://www.tslang.cn/docs/home.html" target="_blank">这里</a>。</p></blockquote>
+<p><strong>plugins：</strong> plugins为<code>1.1.6</code>版本之后的功能，目前支持js压缩<code>wepy-plugin-ugliyjs</code>、图片压缩<code>wepy-plugin-imagemin</code>，其他plugin持续开发中......</p><h3 id="关于compilers和plugins"><a href="#/?id=%e5%85%b3%e4%ba%8ecompilers%e5%92%8cplugins" data-id="关于compilers和plugins" class="anchor"><span>关于compilers和plugins</span></a></h3><p>1.3.1版本新功能，文档建设中...</p><h3 id="wpy文件说明"><a href="#/?id=wpy%e6%96%87%e4%bb%b6%e8%af%b4%e6%98%8e" data-id="wpy文件说明" class="anchor"><span>.wpy文件说明</span></a></h3><p><code>.wpy</code>文件的编译过程过下：</p><p align="center">
+  <img src="./files/422375b0-eee3-11e6-9046-04d9cd3aa429.png" alt="5 small">
+</p>
+
+<p>一个<code>.wpy</code>文件可分为三大部分，各自对应于一个标签：</p><ol>
+<li>脚本部分，即<code>&lt;script&gt;&lt;/script&gt;</code>标签中的内容，又可分为两个部分：</li>
+</ol>
+<p>    逻辑部分，除了config对象之外的部分，对应于原生的<code>.js</code>文件；</p><p>    配置部分，即config对象，对应于原生的<code>.json</code>文件。</p><ol>
+<li><p>结构部分，即<code>&lt;template&gt;&lt;/template&gt;</code>模板部分，对应于原生的<code>.wxml</code>文件。</p></li>
+<li><p>样式部分，即<code>&lt;style&gt;&lt;/style&gt;</code>样式部分，对应于原生的<code>.wxss</code>文件。</p></li>
+</ol>
+<p>其中，小程序入口文件<code>app.wpy</code>不需要<code>template</code>，所以编译时会被忽略。<code>.wpy</code>文件中的<code>script</code>、<code>template</code>、<code>style</code>这三个标签都支持<code>lang</code>和<code>src</code>属性，<code>lang</code>决定了其代码编译过程，<code>src</code>决定是否外联代码，存在<code>src</code>属性且有效时，会忽略内联代码。</p><p>示例如下：</p><pre v-pre="" data-lang="Html"><code class="lang-Html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>less<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page1.less<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wxml<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page1.wxml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token comment" spellcheck="true">// some code</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><p>各标签对应的<code>lang</code>值如下表所示：</p><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>lang默认值</th>
+<th>lang支持值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>style</td>
+<td><code>css</code></td>
+<td><code>css</code>、<code>less</code>、<code>scss</code>、<code>stylus</code></td>
+</tr>
+<tr>
+<td>template</td>
+<td><code>wxml</code></td>
+<td><code>wxml</code>、<code>xml</code>、<code>pug(原jade)</code></td>
+</tr>
+<tr>
+<td>script</td>
+<td><code>babel</code></td>
+<td><code>babel</code>、<code>TypeScript</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="脚本部分介绍"><a href="#/?id=%e8%84%9a%e6%9c%ac%e9%83%a8%e5%88%86%e4%bb%8b%e7%bb%8d" data-id="脚本部分介绍" class="anchor"><span>脚本部分介绍</span></a></h3><h4 id="小程序入口appwpy"><a href="#/?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%85%a5%e5%8f%a3appwpy" data-id="小程序入口appwpy" class="anchor"><span>小程序入口app.wpy</span></a></h4><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> wepy<span class="token punctuation">.</span>app <span class="token punctuation">{</span>
+    config <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"pages"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
+            <span class="token string">"pages/index/index"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"window"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token string">"backgroundTextStyle"</span><span class="token punctuation">:</span> <span class="token string">"light"</span><span class="token punctuation">,</span>
+            <span class="token string">"navigationBarBackgroundColor"</span><span class="token punctuation">:</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span>
+            <span class="token string">"navigationBarTitleText"</span><span class="token punctuation">:</span> <span class="token string">"WeChat"</span><span class="token punctuation">,</span>
+            <span class="token string">"navigationBarTextStyle"</span><span class="token punctuation">:</span> <span class="token string">"black"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">onLaunch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>less<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token comment" spellcheck="true">/** less **/</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></code></pre><p>入口文件<code>app.wpy</code>中所声明的小程序实例继承自<code>wepy.app</code>类，包含一个<code>config</code>属性和其它全局属性、方法、事件。其中<code>config</code>属性对应原生的<code>app.json</code>文件，build编译时会根据<code>config</code>属性自动生成<code>app.json</code>文件，如果需要修改<code>config</code>中的内容，请使用微信提供的相关API。</p><h4 id="页面pagewpy"><a href="#/?id=%e9%a1%b5%e9%9d%a2pagewpy" data-id="页面pagewpy" class="anchor"><span>页面page.wpy</span></a></h4><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Counter <span class="token keyword">from</span> <span class="token string">'../components/counter'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Page</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+    config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    components <span class="token operator">=</span> <span class="token punctuation">{</span>counter1<span class="token punctuation">:</span> Counter<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    events <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Other properties</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wxml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>less<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token comment" spellcheck="true">/** less **/</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></code></pre><p>页面文件<code>page.wpy</code>中所声明的页面实例继承自<code>wepy.page</code>类，该类的主要属性介绍如下：</p><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td>页面配置对象，对应于原生的<code>page.json</code>文件，类似于<code>app.wpy</code>中的config</td>
+</tr>
+<tr>
+<td>components</td>
+<td>页面组件列表对象，声明页面所引入的组件列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>页面渲染数据对象，存放可用于页面模板绑定的渲染数据</td>
+</tr>
+<tr>
+<td>methods</td>
+<td>wxml事件处理函数对象，存放响应wxml中所捕获到的事件的函数，如<code>bindtap</code>、<code>bindchange</code></td>
+</tr>
+<tr>
+<td>events</td>
+<td>WePY组件事件处理函数对象，存放响应组件之间通过<code>$broadcast</code>、<code>$emit</code>、<code>$invoke</code>所传递的事件的函数</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>小程序页面生命周期函数，如<code>onLoad</code>、<code>onReady</code>等，以及其它自定义的方法与属性</td>
+</tr>
+</tbody>
+</table>
+<h4 id="组件comwpy"><a href="#/?id=%e7%bb%84%e4%bb%b6comwpy" data-id="组件comwpy" class="anchor"><span>组件com.wpy</span></a></h4><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wxml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Com</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+    components <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    events <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Other properties</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>less<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token comment" spellcheck="true">/** less **/</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></code></pre><p>组件文件<code>com.wpy</code>中所声明的组件实例继承自<code>wepy.component</code>类，除了不需要<code>config</code>配置以及页面特有的一些生命周期函数之外，其属性与页面属性大致相同。</p><h3 id="实例"><a href="#/?id=%e5%ae%9e%e4%be%8b" data-id="实例" class="anchor"><span>实例</span></a></h3><p>通过前文的介绍可知，在 WePY 中，小程序被分为三个实例：小程序实例<code>App</code>、页面实例<code>Page</code>、组件实例<code>Component</code>。其中<code>Page</code>实例继承自<code>Component</code>。各自的声明方式如下：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 声明一个App小程序实例</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyAPP</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>app</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 声明一个Page页面实例</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">IndexPage</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 声明一个Component组件实例</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre><h4 id="app小程序实例"><a href="#/?id=app%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%ae%9e%e4%be%8b" data-id="app小程序实例" class="anchor"><span>App小程序实例</span></a></h4><p>App小程序实例中主要包含小程序生命周期函数、config配置对象、globalData全局数据对象，以及其他自定义方法与属性。</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyAPP</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>app</span> <span class="token punctuation">{</span>
+    customData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    customFunction <span class="token punctuation">(</span><span class="token punctuation">)</span>　<span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+    onLaunch <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    onShow <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// 对应 app.json 文件</span>
+
+    globalData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><p>在Page页面实例中，可以通过<code>this.$parent</code>来访问App实例。</p><h4 id="page页面实例和component组件实例"><a href="#/?id=page%e9%a1%b5%e9%9d%a2%e5%ae%9e%e4%be%8b%e5%92%8ccomponent%e7%bb%84%e4%bb%b6%e5%ae%9e%e4%be%8b" data-id="page页面实例和component组件实例" class="anchor"><span>Page页面实例和Component组件实例</span></a></h4><p>由于Page页面实际上继承自Component组件，即Page也是组件。除扩展了页面所特有的<code>config</code>配置以及特有的页面生命周期函数之外，其它属性和方法与Component一致，因此这里以Page页面为例进行介绍。</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// export default class MyPage extends wepy.page {</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+    customData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// 自定义数据</span>
+
+    customFunction <span class="token punctuation">(</span><span class="token punctuation">)</span>　<span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">//自定义方法</span>
+
+    onLoad <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// 在Page和Component共用的生命周期函数</span>
+
+    onShow <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment" spellcheck="true">// 只在Page中存在的页面生命周期函数</span>
+
+    config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 只在Page实例中存在的配置数据，对应于原生的page.json文件</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 页面所需数据均需在这里声明，可用于模板数据绑定</span>
+
+    components <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明页面中所引用的组件，或声明组件中所引用的子组件</span>
+
+    mixins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明页面所引用的Mixin实例</span>
+
+    computed <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明计算属性（详见后文介绍）</span>
+
+    watch <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明数据watcher（详见后文介绍）</span>
+
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明页面wxml中标签的事件处理函数。注意，此处只用于声明页面wxml中标签的bind、catch事件，自定义方法需以自定义方法的方式声明</span>
+
+    events <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 声明组件之间的事件处理函数</span>
+<span class="token punctuation">}</span></code></pre><p>注意，对于WePY中的methods属性，因为与Vue中的使用习惯不一致，非常容易造成误解，这里需要特别强调一下：WePY中的methods属性只能声明页面wxml标签的bind、catch事件，不能声明自定义方法，这与Vue中的用法是不一致的。示例如下：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token comment" spellcheck="true">// 错误示例</span>
+
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span>
+        bindtap <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> rst <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">commonFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// doSomething</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        bindinput <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> rst <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">commonFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// doSomething</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment" spellcheck="true">//错误：普通自定义方法不能放在methods对象中</span>
+        customFunction <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">'sth.'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">// 正确示例</span>
+
+<span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span>
+        bindtap <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> rst <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">commonFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// doSomething</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        bindinput <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> rst <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">commonFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// doSomething</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//正确：普通自定义方法在methods对象外声明，与methods平级</span>
+    customFunction <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">'sth.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre><h3 id="组件"><a href="#/?id=%e7%bb%84%e4%bb%b6" data-id="组件" class="anchor"><span>组件</span></a></h3><p>原生小程序支持js<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/module.html?t=20161107" target="_blank">模块化</a>，但彼此独立，业务代码与交互事件仍需在页面处理。无法实现组件化的松耦合与复用的效果。</p><p>例如模板A中绑定一个<code>bindtap="myclick"</code>，模板B中同样绑定一样<code>bindtap="myclick"</code>，那么就会影响同一个页面事件。对于数据同样如此。因此，只有通过改变变量或者事件方法，或者给其加不同前缀才能实现绑定不同事件或者不同数据。当页面复杂之后就十分不利于开发维护。</p><p>因此，在WePY中实现了小程序的组件化开发，组件的所有业务与功能在组件本身实现，组件与组件之间彼此隔离，上述例子在WePY的组件化开发过程中，A组件只会影响到A所绑定的<code>myclick</code>，B也如此。</p><p>WePY编译组件的过程如下：</p><p align="center">
+  <img src="./files/8f090dd6-eee3-11e6-942b-1591a6379ad3.png">
+</p>
+
+<h4 id="普通组件引用"><a href="#/?id=%e6%99%ae%e9%80%9a%e7%bb%84%e4%bb%b6%e5%bc%95%e7%94%a8" data-id="普通组件引用" class="anchor"><span>普通组件引用</span></a></h4><p>当页面需要引入组件或组件需要引入子组件时，必须在<code>.wpy</code>文件的<code>&lt;script&gt;</code>脚本部分先import组件文件，然后在<code>components</code>对象中给组件声明唯一的组件ID，接着在<code>&lt;template&gt;</code>模板部分中添加以<code>components</code>对象中所声明的组件ID进行命名的自定义标签以插入组件。如：</p><pre v-pre="" data-lang="html"><code class="lang-html">/**
+project
+└── src
+    ├── components
+    |   └── child.wpy
+    ├── pages
+    |   ├── index.wpy    index 页面配置、结构、样式、逻辑
+    |   └── log.wpy      log 页面配置、结构、样式、逻辑
+    └──app.wpy           小程序配置项（全局公共配置、公共样式、声明钩子等）
+**/
+
+// index.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 以`&lt;script&gt;`脚本部分中所声明的组件ID为名命名自定义标签，从而在`&lt;template&gt;`模板部分中插入组件 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//引入组件文件</span>
+    <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'../components/child'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//声明组件，分配组件id为child</span>
+        components <span class="token operator">=</span> <span class="token punctuation">{</span>
+            child<span class="token punctuation">:</span> Child
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><p>需要注意的是，WePY中的组件都是静态组件，是以组件ID作为唯一标识的，每一个ID都对应一个组件实例，当页面引入两个相同ID的组件时，这两个组件共用同一个实例与数据，当其中一个组件数据变化时，另外一个也会一起变化。</p><p>如果需要避免这个问题，则需要分配多个组件ID和实例。代码如下：</p><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>child1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>child2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anotherchild</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>anotherchild</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+    <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'../components/child'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+        components <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//为两个相同组件的不同实例分配不同的组件ID，从而避免数据同步变化的问题</span>
+            child<span class="token punctuation">:</span> Child<span class="token punctuation">,</span>
+            anotherchild<span class="token punctuation">:</span> Child
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><p><em>注意</em>：WePY中，在父组件<code>template</code>模板部分插入驼峰式命名的子组件标签时，不能将驼峰式命名转换成短横杆式命名(比如将<code>childCom</code>转换成<code>child-com</code>)，这与Vue中的习惯是不一致。</p><h4 id="组件的循环渲染"><a href="#/?id=%e7%bb%84%e4%bb%b6%e7%9a%84%e5%be%aa%e7%8e%af%e6%b8%b2%e6%9f%93" data-id="组件的循环渲染" class="anchor"><span>组件的循环渲染</span></a></h4><p><em>1.4.6新增</em></p><p>当需要循环渲染WePY组件时(类似于通过<code>wx:for</code>循环渲染原生的wxml标签)，必须使用WePY定义的辅助标签<code>&lt;repeat&gt;</code>，代码如下：</p><pre v-pre="" data-lang="Html"><code class="lang-Html">/**
+project
+└── src
+    ├── components
+    |   └── child.wpy
+    ├── pages
+    |   ├── index.wpy    index 页面配置、结构、样式、逻辑
+    |   └── log.wpy      log 页面配置、结构、样式、逻辑
+    └──app.wpy           小程序配置项（全局样式配置、声明钩子等）
+**/
+
+// index.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 注意，使用for属性，而不是使用wx:for属性 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repeat</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{list}}<span class="token punctuation">"</span></span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 插入&lt;script&gt;脚本部分所声明的child组件，同时传入item --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span> <span class="token attr-name">:item</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repeat</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 引入child组件文件</span>
+    <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'../components/child'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+        components <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 声明页面中要使用到的Child组件的ID为child</span>
+            child<span class="token punctuation">:</span> Child
+        <span class="token punctuation">}</span>
+
+        data <span class="token operator">=</span> <span class="token punctuation">{</span>
+            list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">'title1'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">'title2'</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><p>页面可以引入组件，而组件还可以引入子组件。一个页面引入若干组件后，组件结构如下图：</p><p align="center">
+  <img src="./files/796da1ae-b198-11e6-91ab-e90f485c594d.png">
+</p>
+
+<p>如上图所示，Page_Index页面引入了ComA、ComB、ComC三个组件，同时ComA组件和ComB组件又有自己的子组件ComD、ComE、ComF、ComG、ComH。</p><h4 id="computed-计算属性"><a href="#/?id=computed-%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7" data-id="computed-计算属性" class="anchor"><span>computed 计算属性</span></a></h4><ul>
+<li><p><strong>类型</strong>: <code>{ [key: string]: Function }</code></p></li>
+<li><p><strong>详细</strong>：</p></li>
+</ul>
+<p><code>computed</code>计算属性，是一个有返回值的函数，可直接被当作绑定数据来使用。因此类似于<code>data</code>属性，代码中可通过<code>this.计算属性名</code>来引用，模板中也可通过<code>{{ 计算属性名 }}</code>来绑定数据。</p><p>需要注意的是，只要是组件中有任何数据发生了改变，那么所有计算属性就都会被重新计算。</p><ul>
+<li><p><strong>示例</strong>：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript">  data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      a<span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 计算属性aPlus，在脚本中可通过this.aPlus来引用，在模板中可通过{{ aPlus }}来插值</span>
+  computed <span class="token operator">=</span> <span class="token punctuation">{</span>
+      aPlus <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span></code></pre></li>
+</ul>
+<h4 id="watcher-监听器"><a href="#/?id=watcher-%e7%9b%91%e5%90%ac%e5%99%a8" data-id="watcher-监听器" class="anchor"><span>watcher 监听器</span></a></h4><ul>
+<li><p><strong>类型</strong>: <code>{ [key: string]: Function }</code></p></li>
+<li><p><strong>详细</strong>：</p></li>
+</ul>
+<p>通过监听器<code>watcher</code>能够监听到任何属性的更新。监听器在<code>watch</code>对象中声明，类型为函数，函数名与需要被监听的<code>data</code>对象中的属性同名，每当被监听的属性改变一次，监听器函数就会被自动调用执行一次。</p><p>监听器适用于当属性改变时需要进行某些额外处理的情形。</p><ul>
+<li><p><strong>示例</strong>：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript">  data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      num<span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 监听器函数名必须跟需要被监听的data对象中的属性num同名，</span>
+  <span class="token comment" spellcheck="true">// 其参数中的newValue为属性改变后的新值，oldValue为改变前的旧值</span>
+  watch <span class="token operator">=</span> <span class="token punctuation">{</span>
+      num <span class="token punctuation">(</span>newValue<span class="token punctuation">,</span> oldValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`num value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>oldValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> -&gt; </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 每当被监听的属性num改变一次，对应的同名监听器函数num()就被自动调用执行一次</span>
+  onLoad <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>num<span class="token operator">++</span><span class="token punctuation">;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$apply</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre></li>
+</ul>
+<h4 id="props-传值"><a href="#/?id=props-%e4%bc%a0%e5%80%bc" data-id="props-传值" class="anchor"><span>props 传值</span></a></h4><p>props传值在WePY中属于父子组件之间传值的一种机制，包括静态传值与动态传值。</p><p>在props对象中声明需要传递的值，静态传值与动态传值的声明略有不同，具体可参看下面的示例代码。</p><p><strong>静态传值</strong></p><p>静态传值为父组件向子组件传递常量数据，因此只能传递String字符串类型。</p><p>在父组件<code>template</code>模板部分的组件标签中，使用子组件props对象中所声明的属性名作为其属性名来接收父组件传递的值。</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mytitle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+
+// child.wpy
+props = {
+    title: String
+};
+
+onLoad () {
+    console.log(this.title); // mytitle
+}</code></pre><p><strong>动态传值</strong></p><p>动态传值是指父组件向子组件传递动态数据内容，父子组件数据完全独立互不干扰。但可以通过使用<code>.sync</code>修饰符来达到父组件数据绑定至子组件的效果，也可以通过设置子组件props的<code>twoWay: true</code>来达到子组件数据绑定至父组件的效果。那如果既使用<code>.sync</code>修饰符，同时子组件<code>props</code>中添加的<code>twoWay: true</code>时，就可以实现数据的双向绑定了。</p><p><em>注意</em>：下文示例中的<code>twoWay</code>为<code>true</code>时，表示子组件向父组件单向动态传值，而<code>twoWay</code>为<code>false</code>(默认值，可不写)时，则表示子组件不向父组件传值。这是与Vue不一致的地方，而这里之所以仍然使用<code>twoWay</code>，只是为了尽可能保持与Vue在标识符命名上的一致性。</p><p>在父组件<code>template</code>模板部分所插入的子组件标签中，使用<code>:prop</code>属性（等价于Vue中的<code>v-bind:prop</code>属性）来进行动态传值。</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">// parent.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span> <span class="token attr-name">:title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentTitle<span class="token punctuation">"</span></span> <span class="token attr-name">:syncTitle.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentTitle<span class="token punctuation">"</span></span> <span class="token attr-name">:twoWayTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentTitle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+
+data = {
+    parentTitle: 'p-title'
+};
+
+
+// child.wpy
+
+props = {
+    // 静态传值
+    title: String,
+
+    // 父向子单向动态传值
+    syncTitle: {
+        type: String,
+        default: 'null'
+    },
+
+    twoWayTitle: {
+        type: Number,
+        default: 'nothing',
+        twoWay: true
+    }
+};
+
+onLoad () {
+    console.log(this.title); // p-title
+    console.log(this.syncTitle); // p-title
+    console.log(this.twoWayTitle); // p-title
+
+    this.title = 'c-title';
+    console.log(this.$parent.parentTitle); // p-title.
+    this.twoWayTitle = 'two-way-title';
+    this.$apply();
+    console.log(this.$parent.parentTitle); // two-way-title.  --- twoWay为true时，子组件props中的属性值改变时，会同时改变父组件对应的值
+    this.$parent.parentTitle = 'p-title-changed';
+    this.$parent.$apply();
+    console.log(this.title); // 'c-title';
+    console.log(this.syncTitle); // 'p-title-changed' --- 有.sync修饰符的props属性值，当在父组件中改变时，会同时改变子组件对应的值。
+}</code></pre><h4 id="组件通信与交互"><a href="#/?id=%e7%bb%84%e4%bb%b6%e9%80%9a%e4%bf%a1%e4%b8%8e%e4%ba%a4%e4%ba%92" data-id="组件通信与交互" class="anchor"><span>组件通信与交互</span></a></h4><p><code>wepy.component</code>基类提供<code>$broadcast</code>、<code>$emit</code>、<code>$invoke</code>三个方法用于组件之间的通信和交互，如：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'some-event'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>用于监听组件之间的通信与交互事件的事件处理函数需要写在组件和页面的<code>events</code>对象中，如：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Com</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+    components <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    methods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// events对象中所声明的函数为用于监听组件之间的通信与交互事件的事件处理函数</span>
+    events <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'some-event'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">,</span> $event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+               console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>$name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> receive </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>$event<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> from </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>$event<span class="token punctuation">.</span>source<span class="token punctuation">.</span>$name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Other properties</span>
+<span class="token punctuation">}</span></code></pre><p><strong>$broadcast</strong></p><p><code>$broadcast</code>事件是由父组件发起，所有子组件都会收到此广播事件，除非事件被手动取消。事件广播的顺序为广度优先搜索顺序，如上图，如果页面<code>Page_Index</code>发起一个<code>$broadcast</code>事件，那么按先后顺序依次接收到该事件的组件为：ComA、ComB、ComC、ComD、ComE、ComF、ComG、ComH。如下图：</p><p align="center">
+  <img src="./files/800089e6-b198-11e6-84c5-352d2d0e2f7e.png">
+</p>
+
+<p><strong>$emit</strong></p><p><code>$emit</code>与<code>$broadcast</code>正好相反，事件发起组件的所有祖先组件会依次接收到<code>$emit</code>事件。如果组件ComE发起一个<code>$emit</code>事件，那么接收到事件的先后顺序为：组件ComA、页面Page_Index。如下图：</p><p align="center">
+  <img src="./files/9997932c-b198-11e6-9840-3edae2194f47.png">
+</p>
+
+<p><strong>$invoke</strong></p><p><code>$invoke</code>是一个页面或组件对另一个组件中的方法的直接调用，通过传入组件路径找到相应的组件，然后再调用其方法。</p><p>比如，想在页面<code>Page_Index</code>中调用组件ComA的某个方法：</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">this.$invoke('ComA', 'someMethod', 'someArgs');</code></pre><p>如果想在组件ComA中调用组件ComG的某个方法：</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">this.$invoke('./../ComB/ComG', 'someMethod', 'someArgs');</code></pre><h4 id="组件自定义事件处理函数"><a href="#/?id=%e7%bb%84%e4%bb%b6%e8%87%aa%e5%ae%9a%e4%b9%89%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0" data-id="组件自定义事件处理函数" class="anchor"><span>组件自定义事件处理函数</span></a></h4><p><em>1.4.8新增</em></p><p>可以通过使用<code>.user</code>修饰符为自定义组件绑定事件，如：<code>@customEvent.user="myFn"</code></p><p>其中，<code>@</code>表示事件修饰符，<code>customEvent</code> 表示事件名称，<code>.user</code>表示事件后缀。</p><p>目前总共有三种事件后缀：</p><ul>
+<li><p><code>.default</code>: 绑定小程序冒泡型事件，如<code>bindtap</code>，<code>.default</code>后缀可省略不写；</p></li>
+<li><p><code>.stop</code>: 绑定小程序捕获型事，如<code>catchtap</code>；</p></li>
+<li><p><code>.user</code>: 绑定用户自定义组件事件，通过<code>$emit</code>触发。<strong>注意，如果用了自定义事件，则events中对应的监听函数不会再执行。</strong></p></li>
+</ul>
+<p>示例如下：</p><pre v-pre="" data-lang="Html"><code class="lang-Html">// index.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child</span> <span class="token attr-name">@childFn.user</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentFn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span>
+    <span class="token keyword">import</span> Child <span class="token keyword">from</span> <span class="token string">'../components/child'</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+        components <span class="token operator">=</span> <span class="token punctuation">{</span>
+            child<span class="token punctuation">:</span> Child
+        <span class="token punctuation">}</span>
+
+        methods <span class="token operator">=</span> <span class="token punctuation">{</span>
+            parentFn <span class="token punctuation">(</span>num<span class="token punctuation">,</span> evt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'parent received emit event, number is: '</span> <span class="token operator">+</span> num<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+
+// child.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">@tap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>component</span> <span class="token punctuation">{</span>
+        methods <span class="token operator">=</span> <span class="token punctuation">{</span>
+            tap <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'child is clicked'</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'childFn'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><h4 id="slot-组件内容分发插槽"><a href="#/?id=slot-%e7%bb%84%e4%bb%b6%e5%86%85%e5%ae%b9%e5%88%86%e5%8f%91%e6%8f%92%e6%a7%bd" data-id="slot-组件内容分发插槽" class="anchor"><span>slot 组件内容分发插槽</span></a></h4><p>WePY中的<code>slot</code>插槽作为内容分发标签的空间占位标签，便于在父组件中通过对相当于扩展板卡的内容分发标签的“插拔”，更为灵活、方便地对子组件进行内容分发。</p><p>具体使用方法是，首先在子组件<code>template</code>模板部分中声明<code>slot</code>标签作为内容插槽，同时必须在其<code>name</code>属性中指定插槽名称，还可设置默认的标签内容；然后在引入了该带有插槽的子组件的父组件<code>template</code>模板部分中声明用于“插拔”的内容分发标签。</p><p>注意，这些父组件中的内容分发标签必须具有<code>slot</code>属性，并且其值为子组件中对应的插槽名称，这样父组件内容分发标签中的内容会覆盖掉子组件对应插槽中的默认内容。</p><p>另外，要特别注意的是，父组件中一旦声明了对应于子组件插槽的内容分发标签，即便没有内容，子组件插槽中的默认内容也不会显示出来，只有删除了父组件中对应的内容分发标签，才能显示出来。</p><p>示例：</p><p>在<code>Panel</code>组件中有以下模板：</p><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>panel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span></code></pre><p>在父组件中使用<code>Pannel</code>子组件时，可以这样使用：</p><pre v-pre="" data-lang="html"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>panel</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>新的标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>新的内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>panel</span><span class="token punctuation">&gt;</span></span></code></pre><h3 id="第三方组件"><a href="#/?id=%e7%ac%ac%e4%b8%89%e6%96%b9%e7%bb%84%e4%bb%b6" data-id="第三方组件" class="anchor"><span>第三方组件</span></a></h3><p>WePY允许使用基于WePY开发的第三方组件，开发第三方组件规范请参考<a href="https://github.com/wepyjs/wepy-com-toast" target="_blank">wepy-com-toast</a>。</p><h3 id="mixin-混合"><a href="#/?id=mixin-%e6%b7%b7%e5%90%88" data-id="mixin-混合" class="anchor"><span>Mixin 混合</span></a></h3><p>混合可以将组之间的可复用部分抽离，从而在组件中使用混合时，可以将混合的数据，事件以及方法注入到组件之中。混合分分为两种：</p><ul>
+<li>默认式混合</li>
+<li>兼容式混合</li>
+</ul>
+<h4 id="默认式混合"><a href="#/?id=%e9%bb%98%e8%ae%a4%e5%bc%8f%e6%b7%b7%e5%90%88" data-id="默认式混合" class="anchor"><span>默认式混合</span></a></h4><p>对于组件<code>data</code>数据，<code>components</code>组件，<code>events</code>事件以及其它自定义方法采用<strong>默认式混合</strong>，即如果组件未声明该数据，组件，事件，自定义方法等，那么将混合对象中的选项将注入组件这中。对于组件已声明的选项将不受影响。</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">// mixins/test.js
+import wepy from 'wepy';
+
+export default class TestMixin extends wepy.mixin {
+    data = {
+        foo: 'foo defined by page',
+        bar: 'bar defined by testMix'
+    };
+    methods: {
+    tap () {
+      console.log('mix tap');
+    }
+  }
+}
+
+// pages/index.wpy
+import wepy from 'wepy';
+import TestMixin from './mixins/test';
+
+export default class Index extends wepy.page {
+    data = {
+        foo: 'foo defined by index'
+    };
+    mixins = [TestMixin ];
+    onShow() {
+        console.log(this.foo); // foo defined by index
+        console.log(this.bar); // bar defined by testMix
+    }
+}</code></pre><h4 id="兼容式混合"><a href="#/?id=%e5%85%bc%e5%ae%b9%e5%bc%8f%e6%b7%b7%e5%90%88" data-id="兼容式混合" class="anchor"><span>兼容式混合</span></a></h4><p>对于组件<code>methods</code>响应事件，以及小程序页面事件将采用<strong>兼容式混合</strong>，即先响应组件本身响应事件，然后再响应混合对象中响应事件。<strong>注意，这里事件的执行顺序跟Vue中相反，<a href="https://vuejs.org/v2/guide/mixins.html#Option-Merging" target="_blank">Vue中是先执行mixin中的函数， 再执行组件本身的函数</a>。</strong></p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">// mixins/test.js
+import wepy from 'wepy';
+
+export default class TestMixin extends wepy.mixin {
+    methods = {
+        tap () {
+            console.log('mixin tap');
+        }
+    };
+    onShow() {
+        console.log('mixin onshow');
+    }
+}
+
+// pages/index.wpy
+import wepy from 'wepy';
+import TestMixin from './mixins/test';
+
+export default class Index extends wepy.page {
+
+    mixins = [TestMixin];
+    methods = {
+        tap () {
+            console.log('index tap');
+        }
+    };
+    onShow() {
+        console.log('index onshow');
+    }
+}
+
+
+// index onshow
+// mixin onshow
+// ----- when tap
+// index tap
+// mixin tap</code></pre><h3 id="wxs-weixin-script"><a href="#/?id=wxs-weixin-script" data-id="wxs-weixin-script" class="anchor"><span>WXS (WeiXin Script)</span></a></h3><p>WePY 从<code>1.7.x</code> 版本开始支持 wxs 语法，但语法与原生 wxs 稍有出入。</p><pre v-pre="" data-lang=""><code class="lang-">/**
+project
+└── src
+    ├── wxs
+    |   └── mywxs.wxs      wxs 文件 
+    ├── pages
+    |   └── index.wpy      页面
+    └──app.wpy           
+**/
+
+// mywxs.wxs
+
+modules.exports = {
+  text: 'This is from wxs',
+  filter: function (num) {
+    return num.toFixed(2);
+  }
+};
+
+// index.wpy
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>{{m1.text}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>{{m1.filter(num)}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> mywxs <span class="token keyword">from</span> <span class="token string">'../wxs/mywxs.wxs'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      num<span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    wxs <span class="token operator">=</span> <span class="token punctuation">{</span>
+      m1<span class="token punctuation">:</span> mywxs
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre><p><em>注意</em></p><ol>
+<li>wxs是基于原生的wxs去实现的，只是通过编译把现在的语法编译为原生语法。</li>
+<li>wxs必须是外链文件。并且后缀为<code>.wxs</code>。</li>
+<li>wxs引入后只能在template中使用，不能在script中使用。</li>
+</ol>
+<h3 id="interceptor-拦截器"><a href="#/?id=interceptor-%e6%8b%a6%e6%88%aa%e5%99%a8" data-id="interceptor-拦截器" class="anchor"><span>interceptor 拦截器</span></a></h3><p>可以使用WePY提供的全局拦截器对原生API的请求进行拦截。</p><p>具体方法是配置API的config、fail、success、complete回调函数。参考示例：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> wepy<span class="token punctuation">.</span>app <span class="token punctuation">{</span>
+    constructor <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//拦截request请求</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 发出请求时的回调函数</span>
+            config <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 对所有request请求中的OBJECT参数对象统一附加时间戳属性</span>
+                p<span class="token punctuation">.</span>timestamp <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'config request: '</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// 必须返回OBJECT参数对象，否则无法发送请求到服务端</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment" spellcheck="true">// 请求成功后的回调函数</span>
+            success <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 可以在这里对收到的响应数据对象进行加工处理</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'request success: '</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// 必须返回响应数据对象，否则后续无法对响应数据进行处理</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment" spellcheck="true">//请求失败后的回调函数</span>
+            fail <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'request fail: '</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// 必须返回响应数据对象，否则后续无法对响应数据进行处理</span>
+                <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment" spellcheck="true">// 请求完成时的回调函数(请求成功或失败都会被执行)</span>
+            complete <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'request complete: '</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><h3 id="数据绑定"><a href="#/?id=%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a" data-id="数据绑定" class="anchor"><span>数据绑定</span></a></h3><h4 id="原生小程序的数据绑定方式"><a href="#/?id=%e5%8e%9f%e7%94%9f%e5%b0%8f%e7%a8%8b%e5%ba%8f%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f" data-id="原生小程序的数据绑定方式" class="anchor"><span>原生小程序的数据绑定方式</span></a></h4><p>原生小程序通过<code>Page</code>提供的<code>setData</code>方法来绑定数据，如：</p><pre v-pre="" data-lang="Javascript"><code class="lang-Javascript">this.setData({title: 'this is title'});</code></pre><p>因为小程序架构本身原因，页面渲染层和JS逻辑层分开的，setData操作实际就是JS逻辑层与页面渲染层之间的通信，那么如果在同一次运行周期内多次执行<code>setData</code>操作时，那么通信的次数是一次还是多次呢？这个取决于API本身的设计。</p><h4 id="wepy数据绑定方式"><a href="#/?id=wepy%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f" data-id="wepy数据绑定方式" class="anchor"><span>WePY数据绑定方式</span></a></h4><p>WePY使用脏数据检查对setData进行封装，在函数运行周期结束时执行脏数据检查，一来可以不用关心页面多次setData是否会有性能上的问题，二来可以更加简洁去修改数据实现绑定，不用重复去写setData方法。代码如下：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'this is title'</span><span class="token punctuation">;</span></code></pre><p>需注意的是，在异步函数中更新数据的时，必须手动调用<code>$apply</code>方法，才会触发脏数据检查流程的运行。如：</p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'this is title'</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$apply</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="wepy脏数据检查流程"><a href="#/?id=wepy%e8%84%8f%e6%95%b0%e6%8d%ae%e6%a3%80%e6%9f%a5%e6%b5%81%e7%a8%8b" data-id="wepy脏数据检查流程" class="anchor"><span>WePY脏数据检查流程</span></a></h4><p>在执行脏数据检查时，会通过<code>this.$$phase</code>标识当前检查状态，并且会保证在并发的流程当中，只会有一个脏数据检查流程在运行，以下是执行脏数据检查的流程图：</p><p align="center">
+  <img src="./files/a0d8b1e8-b198-11e6-9034-0997b33bdf95.png">
+</p>
+
+<h3 id="其它优化细节"><a href="#/?id=%e5%85%b6%e5%ae%83%e4%bc%98%e5%8c%96%e7%bb%86%e8%8a%82" data-id="其它优化细节" class="anchor"><span>其它优化细节</span></a></h3><h4 id="_1-wxrequest-接收参数修改"><a href="#/?id=_1-wxrequest-%e6%8e%a5%e6%94%b6%e5%8f%82%e6%95%b0%e4%bf%ae%e6%94%b9" data-id="_1-wxrequest-接收参数修改" class="anchor"><span>1. wx.request 接收参数修改</span></a></h4><p>点这里查看<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/network-request.html?t=20161122" target="_blank">官方文档</a></p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token comment" spellcheck="true">// 原生代码:</span>
+
+wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span>
+    success<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// WePY 使用方式</span>
+wepy<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">'xxxx'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><h4 id="_2-优化事件参数传递"><a href="#/?id=_2-%e4%bc%98%e5%8c%96%e4%ba%8b%e4%bb%b6%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92" data-id="_2-优化事件参数传递" class="anchor"><span>2. 优化事件参数传递</span></a></h4><p>点这里查看<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html?t=20161122" target="_blank">官方文档</a></p><pre v-pre="" data-lang="javascript"><code class="lang-javascript"><span class="token comment" spellcheck="true">// 原生的事件传参方式:</span>
+
+<span class="token operator">&lt;</span>view data<span class="token operator">-</span>id<span class="token operator">=</span><span class="token string">"{{index}}"</span> data<span class="token operator">-</span>title<span class="token operator">=</span><span class="token string">"wepy"</span> data<span class="token operator">-</span>other<span class="token operator">=</span><span class="token string">"otherparams"</span> bindtap<span class="token operator">=</span><span class="token string">"tapName"</span><span class="token operator">&gt;</span> Click me<span class="token operator">!</span> <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    tapName<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token comment" spellcheck="true">// output: 1</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token comment" spellcheck="true">// output: wepy</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>other<span class="token punctuation">)</span><span class="token comment" spellcheck="true">// output: otherparams</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// WePY 1.1.8以后的版本，只允许传string。</span>
+
+<span class="token operator">&lt;</span>view @tap<span class="token operator">=</span><span class="token string">"tapName({{index}}, 'wepy', 'otherparams')"</span><span class="token operator">&gt;</span> Click me<span class="token operator">!</span> <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+
+methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    tapName <span class="token punctuation">(</span>id<span class="token punctuation">,</span> title<span class="token punctuation">,</span> other<span class="token punctuation">,</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> title<span class="token punctuation">,</span> other<span class="token punctuation">)</span><span class="token comment" spellcheck="true">// output: 1, wepy, otherparams</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><h4 id="_3-改变数据绑定方式"><a href="#/?id=_3-%e6%94%b9%e5%8f%98%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a%e6%96%b9%e5%bc%8f" data-id="_3-改变数据绑定方式" class="anchor"><span>3. 改变数据绑定方式</span></a></h4><p>保留setData方法，但不建议使用setData执行绑定，修复传入<code>undefined</code>的bug，并且修改入参支持：
+<code>this.setData(target, value)</code>
+<code>this.setData(object)</code></p><p>点这里查看<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/template.html?t=20161122" target="_blank">官方文档</a></p><pre v-pre="" data-lang="html"><code class="lang-html">// 原生代码:
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span> {{ message }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+
+onLoad: function () {
+    this.setData({message: 'hello world'});
+}
+
+
+// WePY
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span> {{ message }} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+
+onLoad () {
+    this.message = 'hello world';
+}</code></pre><h4 id="_4-组件代替模板和模块"><a href="#/?id=_4-%e7%bb%84%e4%bb%b6%e4%bb%a3%e6%9b%bf%e6%a8%a1%e6%9d%bf%e5%92%8c%e6%a8%a1%e5%9d%97" data-id="_4-组件代替模板和模块" class="anchor"><span>4. 组件代替模板和模块</span></a></h4><p>点这里查看<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/data.html?t=20161122" target="_blank">官方文档</a></p><pre v-pre="" data-lang="html"><code class="lang-html">// 原生代码:
+
+<span class="token comment" spellcheck="true">&lt;!-- item.wxml --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>{{text}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- index.wxml --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item.wxml<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">is</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{text: <span class="token punctuation">'</span>forbar<span class="token punctuation">'</span>}}<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- index.js --&gt;</span>
+var item = require('item.js')
+
+
+
+
+// WePY
+<span class="token comment" spellcheck="true">&lt;!-- /components/item.wpy --&gt;</span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">&gt;</span></span>{{text}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- index.wpy --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>component</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> wepy <span class="token keyword">from</span> <span class="token string">'wepy'</span><span class="token punctuation">;</span>
+    <span class="token keyword">import</span> Item <span class="token keyword">from</span> <span class="token string">'../components/item'</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Index</span> <span class="token keyword">extends</span> <span class="token class-name">wepy<span class="token punctuation">.</span>page</span> <span class="token punctuation">{</span>
+        components <span class="token operator">=</span> <span class="token punctuation">{</span> Item <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre></article></section></main>
+
+
+<script src="./files/hm.js"></script><script>
+    window.$docsify = {
+      el: '#app',
+      auto2top: true,
+      basePath: '../md/',
+      homepage: 'doc.md'
+    }
+</script>
+<script src="./files/docsify.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14c98a4c2ac48bfa7a4c6e9bf797d125";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<div style="z-index: 100000000; position: fixed; top: 0px; left: 0px; width: 120px; height: 120px; border-radius: 3px; background-position: center bottom; background-size: contain; background-repeat: no-repeat; display: none;"></div><div class="progress" style="opacity: 0; width: 0%;"></div></body></html>
